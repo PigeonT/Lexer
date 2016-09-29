@@ -7,23 +7,18 @@
 namespace Compiler
 {
 class Lexer;
-enum class Operator;
 }
-
-enum class Operator
-{
-Equal, Minus, Multiply, Division
-};
 
 class Lexer final 
 {
 private:
-    std::vector<std::string> tokens;
-
+    std::vector<char*> tokens;
+    
 public:
     explicit Lexer();  
 
     void getInputs(const std::string&);
 
+    bool isSpace(const std::string&); 
 };
 #endif
